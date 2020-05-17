@@ -278,7 +278,7 @@
       "Localization": [
         {
           "Culture": "en-US",
-          "Abbreviations": []
+          "Abbreviations": ["tablespoon", "tablespoons"]
         },
         {
           "Culture": "ru-RU",
@@ -402,7 +402,7 @@
       "Localization": [
         {
           "Culture": "en-US",
-          "Abbreviations": []
+          "Abbreviations": ["cup"]
         }
       ]
     },

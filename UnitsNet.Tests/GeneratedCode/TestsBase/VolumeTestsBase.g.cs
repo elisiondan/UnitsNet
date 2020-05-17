@@ -968,11 +968,11 @@ namespace UnitsNet.Tests
                 Assert.Equal("1 bl (U.S.)", new Volume(1, VolumeUnit.UsBeerBarrel).ToString());
                 Assert.Equal("1 ", new Volume(1, VolumeUnit.UsCustomaryCup).ToString());
                 Assert.Equal("1 gal (U.S.)", new Volume(1, VolumeUnit.UsGallon).ToString());
-                Assert.Equal("1 ", new Volume(1, VolumeUnit.UsLegalCup).ToString());
+                Assert.Equal("1 cup", new Volume(1, VolumeUnit.UsLegalCup).ToString());
                 Assert.Equal("1 oz (U.S.)", new Volume(1, VolumeUnit.UsOunce).ToString());
                 Assert.Equal("1 pt (U.S.)", new Volume(1, VolumeUnit.UsPint).ToString());
                 Assert.Equal("1 qt (U.S.)", new Volume(1, VolumeUnit.UsQuart).ToString());
-                Assert.Equal("1 ", new Volume(1, VolumeUnit.UsTablespoon).ToString());
+                Assert.Equal("1 tablespoon", new Volume(1, VolumeUnit.UsTablespoon).ToString());
                 Assert.Equal("1 ", new Volume(1, VolumeUnit.UsTeaspoon).ToString());
             }
             finally
@@ -1031,11 +1031,11 @@ namespace UnitsNet.Tests
             Assert.Equal("1 bl (U.S.)", new Volume(1, VolumeUnit.UsBeerBarrel).ToString(swedishCulture));
             Assert.Equal("1 ", new Volume(1, VolumeUnit.UsCustomaryCup).ToString(swedishCulture));
             Assert.Equal("1 gal (U.S.)", new Volume(1, VolumeUnit.UsGallon).ToString(swedishCulture));
-            Assert.Equal("1 ", new Volume(1, VolumeUnit.UsLegalCup).ToString(swedishCulture));
+            Assert.Equal("1 cup", new Volume(1, VolumeUnit.UsLegalCup).ToString(swedishCulture));
             Assert.Equal("1 oz (U.S.)", new Volume(1, VolumeUnit.UsOunce).ToString(swedishCulture));
             Assert.Equal("1 pt (U.S.)", new Volume(1, VolumeUnit.UsPint).ToString(swedishCulture));
             Assert.Equal("1 qt (U.S.)", new Volume(1, VolumeUnit.UsQuart).ToString(swedishCulture));
-            Assert.Equal("1 ", new Volume(1, VolumeUnit.UsTablespoon).ToString(swedishCulture));
+            Assert.Equal("1 tablespoon", new Volume(1, VolumeUnit.UsTablespoon).ToString(swedishCulture));
             Assert.Equal("1 ", new Volume(1, VolumeUnit.UsTeaspoon).ToString(swedishCulture));
         }
 
