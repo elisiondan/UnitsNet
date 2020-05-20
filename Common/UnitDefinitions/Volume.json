@@ -281,6 +281,10 @@
           "Abbreviations": ["tablespoon", "tablespoons"]
         },
         {
+          "Culture": "cs-CZ",
+          "Abbreviations": ["tablespoon", "tablespoons"]
+        },
+        {
           "Culture": "ru-RU",
           "Abbreviations": []
         },
@@ -403,6 +407,10 @@
         {
           "Culture": "en-US",
           "Abbreviations": ["cup"]
+        },
+        {
+          "Culture": "cs-CZ",
+          "Abbreviations": ["hrnek"]
         }
       ]
     },
