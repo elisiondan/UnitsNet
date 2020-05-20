@@ -111,5 +111,6 @@ namespace UnitsNet
         {
             return InfosLazy.Value.Where(info => info.BaseDimensions.Equals(baseDimensions));
         }
+
     }
 }

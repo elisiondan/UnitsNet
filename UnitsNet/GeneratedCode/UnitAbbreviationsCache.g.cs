@@ -1429,7 +1429,7 @@ namespace UnitsNet
                 ("en-US", typeof(VolumeUnit), (int)VolumeUnit.UsPint, new string[]{"pt (U.S.)"}),
                 ("en-US", typeof(VolumeUnit), (int)VolumeUnit.UsQuart, new string[]{"qt (U.S.)"}),
                 ("en-US", typeof(VolumeUnit), (int)VolumeUnit.UsTablespoon, new string[]{"tablespoon", "tablespoons"}),
-                ("cs-CZ", typeof(VolumeUnit), (int)VolumeUnit.UsTablespoon, new string[]{"tablespoon", "tablespoons"}),
+                ("cs-CZ", typeof(VolumeUnit), (int)VolumeUnit.UsTablespoon, new string[]{"lžice"}),
                 ("ru-RU", typeof(VolumeUnit), (int)VolumeUnit.UsTablespoon, new string[]{""}),
                 ("nb-NO", typeof(VolumeUnit), (int)VolumeUnit.UsTablespoon, new string[]{""}),
                 ("en-US", typeof(VolumeUnit), (int)VolumeUnit.UsTeaspoon, new string[]{""}),
