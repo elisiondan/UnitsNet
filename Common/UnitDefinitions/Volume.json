@@ -282,7 +282,7 @@
         },
         {
           "Culture": "cs-CZ",
-          "Abbreviations": ["lžíce"]
+          "Abbreviations": ["lžíce", "lžička", "lžičky", "lžičku"]
         },
         {
           "Culture": "ru-RU",
@@ -406,11 +406,11 @@
       "Localization": [
         {
           "Culture": "en-US",
-          "Abbreviations": ["cup"]
+          "Abbreviations": ["cup", "cups"]
         },
         {
           "Culture": "cs-CZ",
-          "Abbreviations": ["hrnek"]
+          "Abbreviations": ["šálek", "šálku", "šálků"]
         }
       ]
     },
