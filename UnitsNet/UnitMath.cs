@@ -22,7 +22,7 @@ namespace UnitsNet
         public static TQuantity Sum<TQuantity>(this IEnumerable<TQuantity> source, Enum unitType)
             where TQuantity : IQuantity
         {
-            return (TQuantity) Quantity.From(source.Sum(x => x.As(unitType)), unitType);
+            return (TQuantity)Quantity.From(source.Sum(x => x.As(unitType)), unitType);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace UnitsNet
         public static TQuantity Min<TQuantity>(this IEnumerable<TQuantity> source, Enum unitType)
             where TQuantity : IQuantity
         {
-            return (TQuantity) Quantity.From(source.Min(x => x.As(unitType)), unitType);
+            return (TQuantity)Quantity.From(source.Min(x => x.As(unitType)), unitType);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace UnitsNet
         public static TQuantity Max<TQuantity>(this IEnumerable<TQuantity> source, Enum unitType)
             where TQuantity : IQuantity
         {
-            return (TQuantity) Quantity.From(source.Max(x => x.As(unitType)), unitType);
+            return (TQuantity)Quantity.From(source.Max(x => x.As(unitType)), unitType);
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace UnitsNet
         public static TQuantity Average<TQuantity>(this IEnumerable<TQuantity> source, Enum unitType)
             where TQuantity : IQuantity
         {
-            return (TQuantity) Quantity.From(source.Average(x => x.As(unitType)), unitType);
+            return (TQuantity)Quantity.From(source.Average(x => x.As(unitType)), unitType);
         }
 
         /// <summary>

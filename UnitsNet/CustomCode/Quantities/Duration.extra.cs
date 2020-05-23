@@ -14,10 +14,10 @@ namespace UnitsNet
         /// <returns>The TimeSpan with the same time as the duration</returns>
         public TimeSpan ToTimeSpan()
         {
-            if( Seconds > TimeSpan.MaxValue.TotalSeconds ||
-                Seconds < TimeSpan.MinValue.TotalSeconds )
-                throw new ArgumentOutOfRangeException( nameof( Duration ), "The duration is too large or small to fit in a TimeSpan" );
-            return TimeSpan.FromSeconds( Seconds );
+            if (Seconds > TimeSpan.MaxValue.TotalSeconds ||
+                Seconds < TimeSpan.MinValue.TotalSeconds)
+                throw new ArgumentOutOfRangeException(nameof(Duration), "The duration is too large or small to fit in a TimeSpan");
+            return TimeSpan.FromSeconds(Seconds);
         }
 
         /// <summary>Get <see cref="DateTime"/> from <see cref="DateTime"/> plus <see cref="Duration"/>.</summary>

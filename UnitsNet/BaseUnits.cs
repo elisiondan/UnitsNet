@@ -12,7 +12,7 @@ namespace UnitsNet
     ///     Represents the base units for a quantity. All quantities, both base and derived, can be
     ///     represented by a combination of these seven base units.
     /// </summary>
-    public sealed class BaseUnits: IEquatable<BaseUnits>
+    public sealed class BaseUnits : IEquatable<BaseUnits>
     {
         /// <summary>
         /// Represents BaseUnits that have not been defined.
@@ -59,7 +59,7 @@ namespace UnitsNet
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            if(obj is null || !(obj is BaseUnits))
+            if (obj is null || !(obj is BaseUnits))
                 return false;
 
             return Equals((BaseUnits)obj);
@@ -72,7 +72,7 @@ namespace UnitsNet
         /// <returns>True if equal, otherwise false.</returns>
         public bool Equals(BaseUnits other)
         {
-            if(other is null)
+            if (other is null)
                 return false;
 
             return Length == other.Length &&
@@ -93,11 +93,11 @@ namespace UnitsNet
         /// <returns>True if the base units are a subset of other, otherwise false.</returns>
         public bool IsSubsetOf(BaseUnits other)
         {
-            if(other is null)
+            if (other is null)
                 return false;
 
             // If all base units are undefined, can only be a subset of another where all base units are undefined.
-            if(Equals(Undefined))
+            if (Equals(Undefined))
                 return other.Equals(Undefined);
 
             return (Length == LengthUnit.Undefined || Length == other.Length) &&
@@ -112,7 +112,7 @@ namespace UnitsNet
         /// <inheritdoc />
         public override int GetHashCode()
         {
-            return new {Length, Mass, Time, Current, Temperature, Amount, LuminousIntensity}.GetHashCode();
+            return new { Length, Mass, Time, Current, Temperature, Amount, LuminousIntensity }.GetHashCode();
         }
 
         /// <summary>
@@ -163,32 +163,32 @@ namespace UnitsNet
         /// <summary>
         /// Gets the mass unit (M).
         /// </summary>
-        public MassUnit Mass{ get; }
+        public MassUnit Mass { get; }
 
         /// <summary>
         /// Gets the time unit (T).
         /// </summary>
-        public DurationUnit Time{ get; }
+        public DurationUnit Time { get; }
 
         /// <summary>
         /// Gets the electric current unit (I).
         /// </summary>
-        public ElectricCurrentUnit Current{ get; }
+        public ElectricCurrentUnit Current { get; }
 
         /// <summary>
         /// Gets the temperature unit (Θ).
         /// </summary>
-        public TemperatureUnit Temperature{ get; }
+        public TemperatureUnit Temperature { get; }
 
         /// <summary>
         /// Gets the amount of substance unit (N).
         /// </summary>
-        public AmountOfSubstanceUnit Amount{ get; }
+        public AmountOfSubstanceUnit Amount { get; }
 
         /// <summary>
         /// Gets the luminous intensity unit (J).
         /// </summary>
-        public LuminousIntensityUnit LuminousIntensity{ get; }
+        public LuminousIntensityUnit LuminousIntensity { get; }
 
         /// <summary>
         /// Gets whether or not all of the base units are defined.

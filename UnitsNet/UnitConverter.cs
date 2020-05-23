@@ -111,7 +111,7 @@ namespace UnitsNet
         internal void SetConversionFunction<TQuantity>(ConversionFunctionLookupKey conversionLookup, ConversionFunction<TQuantity> conversionFunction)
             where TQuantity : IQuantity
         {
-            IQuantity TypelessConversionFunction(IQuantity quantity) => conversionFunction((TQuantity) quantity);
+            IQuantity TypelessConversionFunction(IQuantity quantity) => conversionFunction((TQuantity)quantity);
 
             _conversionFunctions[conversionLookup] = TypelessConversionFunction;
         }
@@ -535,7 +535,7 @@ namespace UnitsNet
             if (unitName == null)
                 return false;
 
-            unitValue = (Enum) Enum.Parse(unitType, unitName);
+            unitValue = (Enum)Enum.Parse(unitType, unitName);
             return true;
         }
 

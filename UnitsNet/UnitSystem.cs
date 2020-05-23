@@ -19,10 +19,10 @@ namespace UnitsNet
         /// <param name="baseUnits">The base units for the unit system.</param>
         public UnitSystem(BaseUnits baseUnits)
         {
-            if(baseUnits is null)
+            if (baseUnits is null)
                 throw new ArgumentNullException(nameof(baseUnits));
 
-            if(!baseUnits.IsFullyDefined)
+            if (!baseUnits.IsFullyDefined)
                 throw new ArgumentException("A unit system must have all base units defined.", nameof(baseUnits));
 
             BaseUnits = baseUnits;
@@ -31,7 +31,7 @@ namespace UnitsNet
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            if(obj is null || !(obj is UnitSystem))
+            if (obj is null || !(obj is UnitSystem))
                 return false;
 
             return Equals((UnitSystem)obj);
@@ -40,7 +40,7 @@ namespace UnitsNet
         /// <inheritdoc />
         public bool Equals(UnitSystem other)
         {
-            if(other is null)
+            if (other is null)
                 return false;
 
             return BaseUnits.Equals(other.BaseUnits);
@@ -73,13 +73,13 @@ namespace UnitsNet
         /// <inheritdoc />
         public override int GetHashCode()
         {
-            return new {BaseUnits}.GetHashCode();
+            return new { BaseUnits }.GetHashCode();
         }
 
         /// <summary>
         ///     The base units of this unit system.
         /// </summary>
-        public BaseUnits BaseUnits{ get; }
+        public BaseUnits BaseUnits { get; }
 
         private static readonly BaseUnits SIBaseUnits = new BaseUnits(LengthUnit.Meter, MassUnit.Kilogram, DurationUnit.Second,
             ElectricCurrentUnit.Ampere, TemperatureUnit.Kelvin, AmountOfSubstanceUnit.Mole, LuminousIntensityUnit.Candela);

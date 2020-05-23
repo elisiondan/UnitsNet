@@ -2,8 +2,8 @@
 // Copyright 2013 Andreas Gullberg Larsen (andreas.larsen84@gmail.com). Maintained at https://github.com/angularsen/UnitsNet.
 
 using System;
-using System.Threading;
 using System.Globalization;
+using System.Threading;
 using JetBrains.Annotations;
 using UnitsNet.Units;
 
@@ -44,25 +44,25 @@ namespace UnitsNet
         /// </summary>
         public static Mass FromStonePounds(double stone, double pounds)
         {
-            return FromPounds(StonesInOnePound*stone + pounds);
+            return FromPounds(StonesInOnePound * stone + pounds);
         }
 
         /// <summary>Get <see cref="MassFlow"/> from <see cref="Mass"/> divided by <see cref="TimeSpan"/>.</summary>
         public static MassFlow operator /(Mass mass, TimeSpan timeSpan)
         {
-            return MassFlow.FromKilogramsPerSecond(mass.Kilograms/timeSpan.TotalSeconds);
+            return MassFlow.FromKilogramsPerSecond(mass.Kilograms / timeSpan.TotalSeconds);
         }
 
         /// <summary>Get <see cref="MassFlow"/> from <see cref="Mass"/> divided by <see cref="Duration"/>.</summary>
         public static MassFlow operator /(Mass mass, Duration duration)
         {
-            return MassFlow.FromKilogramsPerSecond(mass.Kilograms/duration.Seconds);
+            return MassFlow.FromKilogramsPerSecond(mass.Kilograms / duration.Seconds);
         }
 
         /// <summary>Get <see cref="Density"/> from <see cref="MassFlow"/> divided by <see cref="Volume"/>.</summary>
         public static Density operator /(Mass mass, Volume volume)
         {
-            return Density.FromKilogramsPerCubicMeter(mass.Kilograms/volume.CubicMeters);
+            return Density.FromKilogramsPerCubicMeter(mass.Kilograms / volume.CubicMeters);
         }
 
         /// <summary>Get <see cref="Volume"/> from <see cref="Mass"/> divided by <see cref="Density"/>.</summary>
@@ -80,13 +80,13 @@ namespace UnitsNet
         /// <summary>Get <see cref="Force"/> from <see cref="Mass"/> times <see cref="Acceleration"/>.</summary>
         public static Force operator *(Mass mass, Acceleration acceleration)
         {
-            return Force.FromNewtons(mass.Kilograms*acceleration.MetersPerSecondSquared);
+            return Force.FromNewtons(mass.Kilograms * acceleration.MetersPerSecondSquared);
         }
 
         /// <summary>Get <see cref="Force"/> from <see cref="Acceleration"/> times <see cref="Mass"/>.</summary>
         public static Force operator *(Acceleration acceleration, Mass mass)
         {
-            return Force.FromNewtons(mass.Kilograms*acceleration.MetersPerSecondSquared);
+            return Force.FromNewtons(mass.Kilograms * acceleration.MetersPerSecondSquared);
         }
     }
 

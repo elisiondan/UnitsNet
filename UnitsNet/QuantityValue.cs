@@ -53,13 +53,13 @@ namespace UnitsNet
         // that avoids unnecessary casts back and forth.
         // If we later change to use decimal more, we should revisit this.
         /// <summary>Implicit cast from <see cref="byte"/> to <see cref="QuantityValue"/>.</summary>
-        public static implicit operator QuantityValue(byte val) => new QuantityValue((double) val);
+        public static implicit operator QuantityValue(byte val) => new QuantityValue((double)val);
         /// <summary>Implicit cast from <see cref="short"/> to <see cref="QuantityValue"/>.</summary>
-        public static implicit operator QuantityValue(short val) => new QuantityValue((double) val);
+        public static implicit operator QuantityValue(short val) => new QuantityValue((double)val);
         /// <summary>Implicit cast from <see cref="int"/> to <see cref="QuantityValue"/>.</summary>
-        public static implicit operator QuantityValue(int val) => new QuantityValue((double) val);
+        public static implicit operator QuantityValue(int val) => new QuantityValue((double)val);
         /// <summary>Implicit cast from <see cref="long"/> to <see cref="QuantityValue"/>.</summary>
-        public static implicit operator QuantityValue(long val) => new QuantityValue((double) val);
+        public static implicit operator QuantityValue(long val) => new QuantityValue((double)val);
         /// <summary>Implicit cast from <see cref="float"/> to <see cref="QuantityValue"/>.</summary>
         public static implicit operator QuantityValue(float val) => new QuantityValue(val); // double
         /// <summary>Implicit cast from <see cref="double"/> to <see cref="QuantityValue"/>.</summary>
@@ -76,7 +76,7 @@ namespace UnitsNet
         public static explicit operator double(QuantityValue number)
         {
             // double -> decimal -> zero (since we can't implement the default struct ctor)
-            return number._value ?? (double) number._valueDecimal.GetValueOrDefault();
+            return number._value ?? (double)number._valueDecimal.GetValueOrDefault();
         }
 
         #endregion
@@ -87,7 +87,7 @@ namespace UnitsNet
         public static explicit operator decimal(QuantityValue number)
         {
             // decimal -> double -> zero (since we can't implement the default struct ctor)
-            return number._valueDecimal ?? (decimal) number._value.GetValueOrDefault();
+            return number._valueDecimal ?? (decimal)number._value.GetValueOrDefault();
         }
 
         #endregion

@@ -42,25 +42,25 @@ namespace UnitsNet
             var number = 0;
             var formatString = format;
 
-            if(string.IsNullOrEmpty(formatString))
+            if (string.IsNullOrEmpty(formatString))
                 formatString = "g";
 
-            if(formatString.StartsWith("a") || formatString.StartsWith("s"))
+            if (formatString.StartsWith("a") || formatString.StartsWith("s"))
             {
-                if(formatString.Length > 1 && !int.TryParse(formatString.Substring(1), out number))
+                if (formatString.Length > 1 && !int.TryParse(formatString.Substring(1), out number))
                     throw new FormatException($"The {format} format string is not supported.");
 
                 formatString = formatString.Substring(0, 1);
             }
 
-            switch(formatString)
+            switch (formatString)
             {
                 case "g":
                     return ToStringWithSignificantDigitsAfterRadix(quantity, formatProvider, 2);
                 case "a":
                     var abbreviations = UnitAbbreviationsCache.Default.GetUnitAbbreviations(quantity.Unit, formatProvider);
 
-                    if(number >= abbreviations.Length)
+                    if (number >= abbreviations.Length)
                         throw new FormatException($"The {format} format string is invalid because the abbreviation index does not exist.");
 
                     return abbreviations[number];

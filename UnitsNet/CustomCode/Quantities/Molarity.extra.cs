@@ -32,9 +32,9 @@ namespace UnitsNet
         ///     Get a <see cref="MassConcentration"/> from this <see cref="Molarity"/>.
         /// </summary>
         /// <param name="molecularWeight"></param>
-        public MassConcentration ToMassConcentration(MolarMass molecularWeight) 
+        public MassConcentration ToMassConcentration(MolarMass molecularWeight)
         {
-            return this * molecularWeight; 
+            return this * molecularWeight;
         }
 
         /// <summary>

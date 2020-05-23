@@ -2,8 +2,8 @@
 // Copyright 2013 Andreas Gullberg Larsen (andreas.larsen84@gmail.com). Maintained at https://github.com/angularsen/UnitsNet.
 
 using System;
-using System.Text;
 using System.Linq;
+using System.Text;
 
 namespace UnitsNet
 {
@@ -30,7 +30,7 @@ namespace UnitsNet
         /// <returns>True if the dimensions represent a base quantity, otherwise false.</returns>
         public bool IsBaseQuantity()
         {
-            var dimensionsArray = new int[]{Length, Mass, Time, Current, Temperature, Amount, LuminousIntensity};
+            var dimensionsArray = new int[] { Length, Mass, Time, Current, Temperature, Amount, LuminousIntensity };
             bool onlyOneEqualsOne = dimensionsArray.Where(dimension => dimension == 1).Take(2).Count() == 1;
             return onlyOneEqualsOne;
         }
@@ -56,7 +56,7 @@ namespace UnitsNet
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            if(obj is null || !(obj is BaseDimensions))
+            if (obj is null || !(obj is BaseDimensions))
                 return false;
 
             var other = (BaseDimensions)obj;
@@ -73,7 +73,7 @@ namespace UnitsNet
         /// <inheritdoc />
         public override int GetHashCode()
         {
-            return new {Length, Mass, Time, Current, Temperature, Amount, LuminousIntensity}.GetHashCode();
+            return new { Length, Mass, Time, Current, Temperature, Amount, LuminousIntensity }.GetHashCode();
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace UnitsNet
         /// <returns>Resulting dimensions.</returns>
         public BaseDimensions Multiply(BaseDimensions right)
         {
-            if(right is null)
+            if (right is null)
                 throw new ArgumentNullException(nameof(right));
 
             return new BaseDimensions(
@@ -103,7 +103,7 @@ namespace UnitsNet
         /// <returns>Resulting dimensions.</returns>
         public BaseDimensions Divide(BaseDimensions right)
         {
-            if(right is null)
+            if (right is null)
                 throw new ArgumentNullException(nameof(right));
 
             return new BaseDimensions(
@@ -146,9 +146,9 @@ namespace UnitsNet
         /// <returns>Resulting dimensions.</returns>
         public static BaseDimensions operator *(BaseDimensions left, BaseDimensions right)
         {
-            if(left is null)
+            if (left is null)
                 throw new ArgumentNullException(nameof(left));
-            else if(right is null)
+            else if (right is null)
                 throw new ArgumentNullException(nameof(right));
 
             return left.Multiply(right);
@@ -162,9 +162,9 @@ namespace UnitsNet
         /// <returns>Resulting dimensions.</returns>
         public static BaseDimensions operator /(BaseDimensions left, BaseDimensions right)
         {
-            if(left is null)
+            if (left is null)
                 throw new ArgumentNullException(nameof(left));
-            else if(right is null)
+            else if (right is null)
                 throw new ArgumentNullException(nameof(right));
 
             return left.Divide(right);
@@ -190,11 +190,11 @@ namespace UnitsNet
         {
             var absoluteValue = Math.Abs(value);
 
-            if(absoluteValue > 0)
+            if (absoluteValue > 0)
             {
                 sb.AppendFormat("[{0}]", name);
 
-                if(absoluteValue > 1)
+                if (absoluteValue > 1)
                     sb.AppendFormat("^{0}", value);
             }
         }
@@ -207,32 +207,32 @@ namespace UnitsNet
         /// <summary>
         /// Gets the mass dimensions (M).
         /// </summary>
-        public int Mass{ get; }
+        public int Mass { get; }
 
         /// <summary>
         /// Gets the time dimensions (T).
         /// </summary>
-        public int Time{ get; }
+        public int Time { get; }
 
         /// <summary>
         /// Gets the electric current dimensions (I).
         /// </summary>
-        public int Current{ get; }
+        public int Current { get; }
 
         /// <summary>
         /// Gets the temperature dimensions (Θ).
         /// </summary>
-        public int Temperature{ get; }
+        public int Temperature { get; }
 
         /// <summary>
         /// Gets the amount of substance dimensions (N).
         /// </summary>
-        public int Amount{ get; }
+        public int Amount { get; }
 
         /// <summary>
         /// Gets the luminous intensity dimensions (J).
         /// </summary>
-        public int LuminousIntensity{ get; }
+        public int LuminousIntensity { get; }
 
         /// <summary>
         /// Represents a dimensionless (unitless) quantity.

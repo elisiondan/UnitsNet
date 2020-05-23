@@ -40,7 +40,7 @@ namespace UnitsNet
         {
             return mass / molarMass;
         }
-        
+
         /// <summary>Get <see cref="Mass" /> from <see cref="AmountOfSubstance" /> for a given <see cref="MolarMass" />.</summary>
         public static Mass operator *(AmountOfSubstance amountOfSubstance, MolarMass molarMass)
         {

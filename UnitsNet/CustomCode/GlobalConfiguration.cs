@@ -22,7 +22,7 @@ namespace UnitsNet
         public static IFormatProvider DefaultCulture
         {
             get => Thread.CurrentThread.CurrentUICulture;
-            set => Thread.CurrentThread.CurrentUICulture = (CultureInfo) value;
+            set => Thread.CurrentThread.CurrentUICulture = (CultureInfo)value;
         }
     }
 }

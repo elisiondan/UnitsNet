@@ -90,7 +90,7 @@ namespace UnitsNet
         /// <summary>Get <see cref="Area"/> from <see cref="Power"/> divided by <see cref="HeatFlux"/>.</summary>
         public static Area operator /(Power power, HeatFlux heatFlux)
         {
-            return Area.FromSquareMeters( power.Watts / heatFlux.WattsPerSquareMeter );
+            return Area.FromSquareMeters(power.Watts / heatFlux.WattsPerSquareMeter);
         }
     }
 }

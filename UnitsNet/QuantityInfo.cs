@@ -42,8 +42,8 @@ namespace UnitsNet
         /// <exception cref="ArgumentNullException">If units -or- baseUnit -or- zero -or- baseDimensions is null.</exception>
         public QuantityInfo(QuantityType quantityType, [NotNull] UnitInfo[] unitInfos, [NotNull] Enum baseUnit, [NotNull] IQuantity zero, [NotNull] BaseDimensions baseDimensions)
         {
-            if(quantityType == QuantityType.Undefined) throw new ArgumentException("Quantity type can not be undefined.", nameof(quantityType));
-            if(baseUnit == null) throw new ArgumentNullException(nameof(baseUnit));
+            if (quantityType == QuantityType.Undefined) throw new ArgumentException("Quantity type can not be undefined.", nameof(quantityType));
+            if (baseUnit == null) throw new ArgumentNullException(nameof(baseUnit));
 
             BaseDimensions = baseDimensions ?? throw new ArgumentNullException(nameof(baseDimensions));
             Zero = zero ?? throw new ArgumentNullException(nameof(zero));
@@ -60,8 +60,8 @@ namespace UnitsNet
 
             // Obsolete members
 #pragma warning disable 618
-            UnitNames = UnitInfos.Select( unitInfo => unitInfo.Name ).ToArray();
-            Units = UnitInfos.Select( unitInfo => unitInfo.Value ).ToArray();
+            UnitNames = UnitInfos.Select(unitInfo => unitInfo.Name).ToArray();
+            Units = UnitInfos.Select(unitInfo => unitInfo.Value).ToArray();
             BaseUnit = BaseUnitInfo.Value;
 #pragma warning restore 618
         }
@@ -136,7 +136,7 @@ namespace UnitsNet
         /// <exception cref="InvalidOperationException">More than one unit was found that is a subset of <paramref name="baseUnits"/>.</exception>
         public UnitInfo GetUnitInfoFor(BaseUnits baseUnits)
         {
-            if(baseUnits == null)
+            if (baseUnits == null)
                 throw new ArgumentNullException(nameof(baseUnits));
 
             var matchingUnitInfos = GetUnitInfosFor(baseUnits)
@@ -161,7 +161,7 @@ namespace UnitsNet
         /// <exception cref="ArgumentNullException"><paramref name="baseUnits"/> is null.</exception>
         public IEnumerable<UnitInfo> GetUnitInfosFor(BaseUnits baseUnits)
         {
-            if(baseUnits == null)
+            if (baseUnits == null)
                 throw new ArgumentNullException(nameof(baseUnits));
 
             return UnitInfos.Where((unitInfo) => unitInfo.BaseUnits.IsSubsetOf(baseUnits));
@@ -188,7 +188,7 @@ namespace UnitsNet
 
             // Obsolete members
 #pragma warning disable 618
-            Units = UnitInfos.Select( unitInfo => unitInfo.Value ).ToArray();
+            Units = UnitInfos.Select(unitInfo => unitInfo.Value).ToArray();
             BaseUnit = BaseUnitInfo.Value;
 #pragma warning restore 618
         }

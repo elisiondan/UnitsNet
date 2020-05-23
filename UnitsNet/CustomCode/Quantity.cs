@@ -13,7 +13,7 @@ namespace UnitsNet
 
         static Quantity()
         {
-            var quantityTypes = Enum.GetValues(typeof(QuantityType)).Cast<QuantityType>().Except(new[] {QuantityType.Undefined}).ToArray();
+            var quantityTypes = Enum.GetValues(typeof(QuantityType)).Cast<QuantityType>().Except(new[] { QuantityType.Undefined }).ToArray();
             Types = quantityTypes;
             Names = quantityTypes.Select(qt => qt.ToString()).ToArray();
 

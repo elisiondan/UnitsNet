@@ -51,7 +51,7 @@ namespace UnitsNet
             str = str.Trim();
 
             var numFormat = formatProvider != null
-                ? (NumberFormatInfo) formatProvider.GetFormat(typeof(NumberFormatInfo))
+                ? (NumberFormatInfo)formatProvider.GetFormat(typeof(NumberFormatInfo))
                 : NumberFormatInfo.CurrentInfo;
 
             if (numFormat == null)
@@ -79,14 +79,14 @@ namespace UnitsNet
         {
             result = default;
 
-            if(string.IsNullOrWhiteSpace(str)) return false;
+            if (string.IsNullOrWhiteSpace(str)) return false;
             str = str.Trim();
 
             var numFormat = formatProvider != null
-                ? (NumberFormatInfo) formatProvider.GetFormat(typeof(NumberFormatInfo))
+                ? (NumberFormatInfo)formatProvider.GetFormat(typeof(NumberFormatInfo))
                 : NumberFormatInfo.CurrentInfo;
 
-            if(numFormat == null)
+            if (numFormat == null)
                 return false;
 
             var regex = CreateRegexForQuantity<TUnitType>(formatProvider);
@@ -171,10 +171,10 @@ namespace UnitsNet
             result = default;
 
             if (!double.TryParse(valueString, ParseNumberStyles, formatProvider, out var value))
-                    return false;
+                return false;
 
             if (!_unitParser.TryParse<TUnitType>(unitString, formatProvider, out var parsedUnit))
-                    return false;
+                return false;
 
             result = fromDelegate(value, parsedUnit);
             return true;
